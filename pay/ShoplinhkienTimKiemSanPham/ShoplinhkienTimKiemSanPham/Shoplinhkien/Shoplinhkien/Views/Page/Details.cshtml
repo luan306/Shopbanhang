@@ -1,0 +1,190 @@
+﻿@model Shoplinhkien.Models.Page
+
+@{
+    ViewData["Title"] = Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string url = $"/page/{Model.Alias}";
+}
+
+@*<h1>Details</h1>
+
+<div>
+    <h4>Page</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PageName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PageName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Contents)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Contents)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Thumb)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Thumb)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Published)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Published)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MetaDesc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MetaDesc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MetaKey)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MetaKey)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Alias)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Alias)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ordering)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ordering)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Creator)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Creator)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.PageId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+*@
+
+
+<div class="single-blog ptb-100  ptb-sm-60">
+    <div class="container">
+        <div class="row">
+            <!-- Single Blog Sidebar Start -->
+            <div class="col-lg-3 order-2 order-lg-1">
+                <aside>
+                    <div class="single-sidebar latest-pro mb-30">
+                        <h3 class="sidebar-title">latest Posts</h3>
+                        <ul class="sidbar-style">
+                            <li><a href="shop.html">cameras</a></li>
+                            <li><a href="shop.html">gamepad</a></li>
+                            <li><a href="shop.html">digital cameras</a></li>
+                            <li><a href="shop.html">virtual reality</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-img mb-30">
+                        <a href="shop.html"><img src="img/banner/banner-sidebar.jpg" alt="slider-banner"></a>
+                    </div>
+                    <div class="single-sidebar mb-30">
+                        <h3 class="sidebar-title">others</h3>
+                        <ul class="sidbar-style">
+                            <li><a href="login.html">Log in</a></li>
+                            <li><a href="#">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+                            <li><a href="#">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+                            <li><a href="#">Others link</a></li>
+                        </ul>
+                    </div>
+                    <div class="tags">
+                        <h3 class="sidebar-title">Tags</h3>
+                        <div class="sidbar-style">
+                            <ul class="tag-list">
+                                <li><a href="#">Branding</a></li>
+                                <li><a href="#">Creative</a></li>
+                                <li><a href="#">design</a></li>
+                                <li><a href="#">Latest</a></li>
+                                <li><a href="#">Male</a></li>
+                                <li><a href="#">Female</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            <!-- Single Blog Sidebar End -->
+            <!-- Single Blog Sidebar Description Start -->
+            <div class="col-lg-9 order-1 order-lg-2">
+                <div class="single-sidebar-desc mb-all-40">
+                    <div class="sidebar-img">
+                        <img src="~/images/pages/@Model.Thumb" alt="@Model.Title">
+                    </div>
+                    <div class="sidebar-post-content">
+                        <h1 class="sidebar-lg-title">@Model.PageName</h1>
+                        <ul class="post-meta d-sm-inline-flex">
+                            <li><span>Posted</span> by Demo Posthemes</li>
+                            <li><span> @Model.CreatedAt</span></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-desc mb-50">
+                        <p>
+                           
+                            @Html.Raw(Model.Contents)
+                        </p>
+                    </div>
+                    <!-- Contact Email Area Start -->
+                    <div class="blog-detail-contact">
+                        <h3 class="mb-15 leave-reply">Leave a Reply</h3>
+                        <div class="submit-review">
+                            <form>
+                                <div class="form-group">
+                                    <label for="usr">Your Name:</label>
+                                    <input type="text" class="form-control" id="usr">
+                                </div>
+                                <div class="form-group">
+                                    <label for="usr">your email:</label>
+                                    <input type="email" class="form-control" id="email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="web-address">Website Url:</label>
+                                    <input type="text" class="form-control" id="web-address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="sub">Subject:</label>
+                                    <input type="text" class="form-control" id="sub">
+                                </div>
+                                <div class="form-group">
+                                    <label for="comment">Comment:</label>
+                                    <textarea class="form-control" rows="5" id="comment"></textarea>
+                                </div>
+                                <div class="sbumit-reveiew">
+                                    <input value="Submit" class="return-customer-btn" type="submit">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Contact Email Area End -->
+                </div>
+            </div>
+            <!-- Single Blog Sidebar Description End -->
+        </div>
+    </div>
+    <!-- Container End -->
+</div>

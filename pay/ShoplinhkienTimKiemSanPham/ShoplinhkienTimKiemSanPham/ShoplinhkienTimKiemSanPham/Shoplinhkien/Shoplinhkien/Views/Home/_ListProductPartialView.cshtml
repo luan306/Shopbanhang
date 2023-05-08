@@ -1,0 +1,162 @@
+﻿@*@model List<Product>
+@if (Model != null && Model.Count() > 0)
+{
+    <div class="product-item-wrap row">
+        @foreach (var item in Model)
+        {
+            string url = $"/{item.Alias}-{item.ProductId}.html";
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="product-item">
+                    <div class="product-img img-zoom-effect">
+                        <a href="@url">
+                            <img width="200" height="200" class="img-full" src="~/images/products/@item.Image" alt="@item.Title">
+                        </a>
+                        <div class="product-add-action">
+                            <ul>
+                                <li>
+                                    <a href="cart.html">
+                                        <i class="pe-7s-cart"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <a class="product-name" href="@url">@item.ProductName</a>
+                        <div class="price-box pb-1">
+                            <span class="new-price">@item.Price.Value.ToString("#,##0") VNĐ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+}*@
+
+@*@model List<Product>
+
+@if (Model != null && Model.Count() > 0)
+{<div class="tab-content">
+    <div class="single-product">
+         @foreach (var item in Model)
+        {
+            string url = $"/{item.Alias}-{item.ProductId}.html";
+                                        <!-- Product Image Start -->
+                                        <div class="pro-img">
+                <a href="@url">
+                    <img class="primary-img" src="~/images/products/@item.Image" alt="@item.Title">
+                    <img class="secondary-img" src="~/images/products/@item.Image" alt="@item.Title">
+                                            </a>
+                <a href="@url" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                                        </div>
+                                        <!-- Product Image End -->
+                                        <!-- Product Content Start -->
+                                        <div class="pro-content">
+                                            <div class="pro-info">
+                    <h4><a href="@url">@item.ProductName</a></h4>
+                    <p><span class="price">@item.Price.Value.ToString("#,##0") VNĐ</span><del class="prev-price">@item.Price.Value.ToString("#,##0") VNĐ</del></p>
+                                                <div class="label-product l_sale">@item.Discount<span class="symbol-percent">%</span></div>
+                                            </div>
+                                            <div class="pro-actions">
+                                                <div class="actions-primary">
+                                                    <a href="@url" title="Add to Cart"> + Add To Cart</a>
+                                                </div>
+                                                <div class="actions-secondary">
+                        <a href="@url" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                        <a href="@url" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Product Content End -->
+                                        <span class="sticker-new">new</span>
+                                    }
+        </div>
+    </div>
+}*@
+
+@model List<Product>
+@if (Model != null && Model.Count() > 0)
+{
+    <div class="product-item-wrap row">
+        @foreach (var item in Model)
+        {
+            string url = $"/{item.Alias}-{item.ProductId}.html";
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+                <div class="product-item single-product">
+                    <div class="product-img img-zoom-effect">
+                        <a href="@url">
+                            <img width="200" height="200" class="img-full" src="~/images/products/@item.Image" alt="@item.Title">
+                        </a>
+                        <div class="product-add-action">
+                            <ul>
+                                <li>
+                                    <a href="cart.html">
+                                        <i class="pe-7s-cart"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <a class="product-name" href="@url">@item.ProductName</a>
+                        <div class="price-box pb-1">
+                            <span class="new-price">@item.Price.Value.ToString("#,##0") VNĐ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+}
+
+
+@*@model List<Product>
+
+    @if (Model != null && Model.Count() > 0)
+    {
+        <div class="best-seller-pro-active owl-carousel">
+            @foreach (var item in Model)
+            {
+                string url = $"/{item.Alias}-{item.ProductId}.html";
+                <div class="single-product">
+
+                    <!-- Product Image Start -->
+                    <div class="pro-img">
+                        <a href="/cart.html">
+                            <img class="primary-img" src="~/images/products/@item.Image" alt="@item.Title">
+                            <img class="secondary-img" src="~/images/products/@item.Image" alt="@item.Title">
+                        </a>
+                        <a href="#" class="quick_view" data-toggle="modal" data-target="#myModal" title="Quick View"><i class="lnr lnr-magnifier"></i></a>
+                    </div>
+                    <!-- Product Image End -->
+                    <!-- Product Content Start -->
+                    <div class="pro-content">
+                        <div class="pro-info">
+                            <h4><a href="product.html">Work Lamp Silver Proin</a></h4>
+                            <p><span class="price">$320.45</span></p>
+                        </div>
+                        <div class="pro-actions">
+                            <div class="actions-primary">
+                                <a href="cart.html" title="Add to Cart"> + Add To Cart</a>
+                            </div>
+                            <div class="actions-secondary">
+                                <a href="compare.html" title="Compare"><i class="lnr lnr-sync"></i> <span>Add To Compare</span></a>
+                                <a href="wishlist.html" title="WishList"><i class="lnr lnr-heart"></i> <span>Add to WishList</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product Content End -->
+
+
+                </div>
+            }
+        </div>
+
+    }
+
+
+
+
+*@

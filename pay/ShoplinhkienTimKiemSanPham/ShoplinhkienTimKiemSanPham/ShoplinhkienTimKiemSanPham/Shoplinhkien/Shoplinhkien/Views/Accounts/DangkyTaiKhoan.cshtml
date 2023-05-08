@@ -1,0 +1,142 @@
+﻿@model Shoplinhkien.ModelViews.RegisterViewModel
+
+
+@{
+    ViewData["Title"] = "Đăng ký tài khoản";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<h1>DangkyTaiKhoan</h1>
+
+<h4>RegisterViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="DangkyTaiKhoan">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+*@
+
+
+<div class="register-account ptb-100 ptb-sm-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="register-title">
+                    <h3 class="mb-10">REGISTER ACCOUNT</h3>
+                    <p class="mb-10">If you already have an account with us, please login at the login page.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Row End -->
+        <div class="row">
+            <div class="col-sm-12">
+                <form class="form-register" asp-action="DangkyTaiKhoan">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <fieldset>
+                        <legend>Your Personal Details</legend>
+                        <div class="form-group d-md-flex align-items-md-center">
+                            <label class="control-label col-md-2" for="f-name"><span class="require">*</span>Họ Và Tên</label>
+                            <div class="col-md-10">
+                                <input type="text" asp-for="FullName" class="form-control" id="f-name" placeholder="Họ và Tên">
+                                <span asp-validation-for="FullName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group d-md-flex align-items-md-center">
+                            <label class="control-label col-md-2" for="email"><span class="require">*</span>Email </label>
+                            <div class="col-md-10">
+                                <input type="email" asp-for="Email" class="form-control" id="email" placeholder="Nhập email...">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group d-md-flex align-items-md-center">
+                            <label class="control-label col-md-2" for="number"><span class="require">*</span>Số điện thoại</label>
+                            <div class="col-md-10">
+                                <input type="tel" asp-for="Phone" class="form-control" id="number" placeholder="Số điện thoại">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Your Password</legend>
+                        <div class="form-group d-md-flex align-items-md-center">
+                            <label class="control-label col-md-2" for="pwd"><span class="require">*</span>Mật khẩu:</label>
+                            <div class="col-md-10">
+                                <input type="password" asp-for="Password" class="form-control" id="pwd" placeholder="Nhập mật khẩu">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group d-md-flex align-items-md-center">
+                            <label class="control-label col-md-2" for="pwd-confirm"><span class="require">*</span>Nhập lại mật khẩu</label>
+                            <div class="col-md-10">
+                                <input type="password" asp-for="ConfirmPassword" class="form-control" id="pwd-confirm" placeholder="Nhập lại mật khẩu">
+                                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                            </div>
+                        </div>
+                        @*<div class="form-group d-md-flex align-items-md-center">
+                            <label class="control-label col-md-2" for="pwd-confirm"><span class="require">*</span>Ngày Sinh</label>*@
+                        @*<div class="col-md-10">
+                                <input class="form-control" type="date" asp-for="Birthday" value="Nhập Ngày sinh" id="f-name">
+                                <span asp-validation-for="Birthday" class="text-danger"></span>
+                        </div>*@
+                     @* </div>*@
+                        
+                    </fieldset>
+                   @* <fieldset class="newsletter-input">
+                        <legend>Newsletter</legend>
+                        <div class="form-group d-md-flex align-items-md-center">
+                            <label class="col-md-2 control-label">Subscribe</label>
+                            <div class="col-md-10 radio-button">
+                                <label class="radio-inline"><input type="radio" name="optradio">Yes</label>
+                                <label class="radio-inline"><input type="radio" name="optradio">No</label>
+                            </div>
+                        </div>
+                    </fieldset>*@
+                    <div class="terms">
+                        <div class="float-md-right">
+                           @* <span>I have read and agree to the <a href="#" class="agree"><b>Privacy Policy</b></a></span>
+                            <input type="checkbox" name="agree" value="1"> &nbsp;*@
+                            <input type="submit" value="Đăng kí" class="return-customer-btn">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- Row End -->
+    </div>
+    <!-- Container End -->
+</div>

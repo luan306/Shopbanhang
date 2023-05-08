@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Shoplinhkien.props" />
+</Project>

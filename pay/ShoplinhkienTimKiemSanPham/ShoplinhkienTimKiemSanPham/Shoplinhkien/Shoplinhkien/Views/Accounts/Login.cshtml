@@ -1,0 +1,109 @@
+﻿@model Shoplinhkien.ModelViews.LoginViewModel
+@{
+    ViewData["Title"] = "Đăng nhập tài khoản";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<h1>Login</h1>
+
+<h4>LoginViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="UserName" />
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+
+<div class="log-in ptb-100 ptb-sm-60">
+    <div class="container">
+        <div class="row">
+            <!-- New Customer Start -->
+            <div class="col-md-6">
+                <div class="well mb-sm-30">
+                    <div class="new-customer">
+                        <h3 class="custom-title">new customer</h3>
+                        <p class="mtb-10"><strong>Register</strong></p>
+                        <p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made</p>
+                        <a class="customer-btn" href="dang-ky.html">continue</a>
+                    </div>
+                </div>
+            </div>
+            <!-- New Customer End -->
+            <!-- Returning Customer Start -->
+            <div class="col-md-6">
+                <div class="well">
+                    <div class="return-customer">
+                        <h3 class="mb-10 custom-title">Đăng Nhập</h3>
+                        <p class="mb-10"><strong>I am a returning customer</strong></p>
+                        <form method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                
+                                <label>Địa chỉ Email</label>
+                                <input type="email" asp-for="UserName" placeholder="Địa chỉ Email" id="input-email" class="form-control">
+                                <span asp-validation-for="UserName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                               
+                                <label>Mật khẩu</label>
+                                <input type="password" asp-for="Password" id="input-password" class="form-control" placeholder="Mật khẩu">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                            <p class="lost-password"><a href="forgot-password.html">Forgot password?</a></p>
+                            <input type="submit" value="Đăng Nhập" class="return-customer-btn">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Returning Customer End -->
+        </div>
+        <!-- Row End -->
+    </div>
+    <!-- Container End -->
+</div>
+@*<main class="main-content">
+    <div class="login-register-area section-space-y-axis-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 pt-10 pt-lg-0">
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="login-form">
+                            <h4 class="login-title">Đăng nhập</h4>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label>Địa chỉ Email</label>
+                                    <input type="email" asp-for="UserName" placeholder="Địa chỉ Email">
+                                    <span asp-validation-for="UserName" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-12">
+                                    <label>Mật khẩu</label>
+                                    <input type="password" asp-for="Password" placeholder="Mật khẩu">
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn-custom-size lg-size btn-secondary btn-primary-hover rounded-0">Đăng nhập</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>*@

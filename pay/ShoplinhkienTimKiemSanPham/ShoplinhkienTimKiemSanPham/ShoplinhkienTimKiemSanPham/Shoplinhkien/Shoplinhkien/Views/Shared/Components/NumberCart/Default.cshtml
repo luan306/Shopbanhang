@@ -1,0 +1,11 @@
+﻿@model List<Shoplinhkien.ModelViews.CartItem>
+@if (Model != null && Model.Count() > 0)
+{
+
+    <a href="#" style=" position: absolute; left:75px;"><span class="my-cart"><span class="total-pro">@Model.Count()</span><span>cart</span></span></a>
+}
+else
+{
+    <a href="#" style=" position: absolute; left:75px; top:15px;"><span class="my-cart"><span class="total-pro">0</span></span></a>
+
+}

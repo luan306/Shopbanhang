@@ -1,0 +1,132 @@
+﻿@model List<Shoplinhkien.ModelViews.CartItem>
+@*@if (Model != null && Model.Count() > 0)
+{
+    <div class="harmic-offcanvas-body">
+        <div class="minicart-content">
+            <div class="minicart-heading">
+                <h4 class="mb-0">Giỏ hàng</h4>
+                <a href="#" class="button-close"><i class="pe-7s-close"></i></a>
+            </div>
+            <ul class="minicart-list">
+                @foreach (var item in Model)
+                {
+                    string url = $"/{item.product.Alias}-{item.product.ProductId}.html";
+                    <li class="minicart-product">
+                        <a href="@url" class="product-item_img">
+                            <img class="img-full" src="~/images/products/@item.product.Image" alt="@item.product.ProductName">
+                        </a>
+                        <div class="product-item_content">
+                            <a class="product-item_title" href="@url">@item.product.ProductName</a>
+                            <span class="product-item_quantity">@item.amount x @item.product.Price.Value.ToString("#,##0") VNĐ</span>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="minicart-item_total">
+            <span>Tổng tiền</span>
+            <span class="ammount">@Model.Sum(x => x.TotalMoney).ToString("#,##0") VNĐ</span>
+        </div>
+        <div class="group-btn_wrap d-grid gap-2">
+            <a href="cart.html" class="btn btn-secondary btn-primary-hover">Xem giỏ hàng</a>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a href="/checkout.html" class="btn btn-secondary btn-primary-hover">Thanh toán</a>
+            }
+            else
+            {
+                <a href="/dang-nhap.html?returnUrl=/checkout.html" class="btn btn-secondary btn-primary-hover">Thanh toán</a>
+            }
+        </div>
+    </div>
+}
+else
+{
+  <div class="harmic-offcanvas-body">
+        <div class="minicart-content">
+            <div class="minicart-heading">
+                <h4 class="mb-0">Giỏ hàng rỗng</h4>
+            </div>
+        </div>
+   </div>*@
+
+@if (Model != null && Model.Count() > 0)
+{
+<div class="col-lg-4 col-md-12">
+    <div class="cart-box mt-all-30">
+        <ul class="d-flex justify-content-lg-end justify-content-center align-items-center" style="margin-right:50px;">
+            <li>
+                <a href="#"><i class="lnr lnr-cart"></i></a>
+                <ul class="ht-dropdown cart-box-width">
+                        @foreach (var item in Model)
+                        {
+                            string url = $"/{item.product.Alias}-{item.product.ProductId}.html";
+                            <div class="single-cart-box">
+                                <div class="cart-img">
+                                    <a href="#"><img src="~/images/products/@item.product.Image" alt="@item.product.ProductName"></a>
+                                    <span class="pro-quantity">@item.amount</span>
+                                </div>
+                                <div class="cart-content">
+                                    <h6><a href="@url">@item.product.ProductName </a></h6>
+                                    <span class="cart-price">@item.product.Price.Value.ToString("#,##0") VNĐ</span>
+                                    
+                                </div>
+                                <a class="del-icone" href="#"><i class="ion-close"></i></a>
+                            </div>
+                        }
+                        <li>
+
+                        
+                        <!-- Cart Box End -->
+                        <!-- Cart Footer Inner Start -->
+                        <div class="cart-footer">
+                            <ul class="price-content">
+                                    <li>Tổng tiền <span>@Model.Sum(x => x.TotalMoney).ToString("#,##0") VNĐ</span></li>
+                               
+                            </ul>
+                            <div class="cart-actions text-center">
+                                    <a class="cart-checkout" href="cart.html">Xem Giỏ Hàng</a>
+                            </div>
+                                <div class="cart-actions text-center">
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <a href="/checkout.html" class="cart-checkout">Thanh toán</a>
+                                    }
+                                    else
+                                    {
+                                        <a href="/dang-nhap.html?returnUrl=/checkout.html" class="cart-checkout">Thanh toán</a>
+                                    }
+                                </div>
+                        </div>
+                        <!-- Cart Footer Inner End -->
+                    </li>
+                </ul>
+            </li>
+            
+        </ul>
+    </div>
+</div>
+}
+else
+{
+    <div class="col-lg-4 col-md-12">
+    <div class="cart-box mt-all-30">
+        <ul class="" style="margin-left:10px;">
+                <li>
+                    <a href="#"><i class="lnr lnr-cart"></i><span class="my-cart"><span>cart</span></span></a>
+                    <ul class="ht-dropdown cart-box-width">
+                        <li>
+                            
+                                <a href="#"><img src="https://salanest.com/img/empty-cart.webp" alt=""></a>
+                           
+                        </li>
+
+
+
+                    </ul>
+                </li>
+                
+        </ul>
+        </div>
+    </div>
+}

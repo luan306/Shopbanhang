@@ -1,0 +1,187 @@
+﻿@*@model Shoplinhkien.Models.Order
+
+@{
+    ViewData["Title"] = "ChangeStatus";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>ChangeStatus</h1>
+
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ChangeStatus">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="OrderId" />
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label"></label>
+                <select asp-for="CustomerId" class="form-control" asp-items="ViewBag.CustomerId"></select>
+                <span asp-validation-for="CustomerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OrderDate" class="control-label"></label>
+                <input asp-for="OrderDate" class="form-control" />
+                <span asp-validation-for="OrderDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShipDate" class="control-label"></label>
+                <input asp-for="ShipDate" class="form-control" />
+                <span asp-validation-for="ShipDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TransactStatusId" class="control-label"></label>
+                <select asp-for="TransactStatusId" class="form-control" asp-items="ViewBag.TransactStatusId"></select>
+                <span asp-validation-for="TransactStatusId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deleted" class="control-label"></label>
+                <input asp-for="Deleted" class="form-control" />
+                <span asp-validation-for="Deleted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Paid" class="control-label"></label>
+                <input asp-for="Paid" class="form-control" />
+                <span asp-validation-for="Paid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaymentDate" class="control-label"></label>
+                <input asp-for="PaymentDate" class="form-control" />
+                <span asp-validation-for="PaymentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaymentId" class="control-label"></label>
+                <select asp-for="PaymentId" class="form-control" asp-items="ViewBag.PaymentId"></select>
+                <span asp-validation-for="PaymentId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Note" class="control-label"></label>
+                <input asp-for="Note" class="form-control" />
+                <span asp-validation-for="Note" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Total" class="control-label"></label>
+                <input asp-for="Total" class="form-control" />
+                <span asp-validation-for="Total" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaymentStatusId" class="control-label"></label>
+                <input asp-for="PaymentStatusId" class="form-control" />
+                <span asp-validation-for="PaymentStatusId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShipperId" class="control-label"></label>
+                <select asp-for="ShipperId" class="form-control" asp-items="ViewBag.ShipperId"></select>
+                <span asp-validation-for="ShipperId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationId" class="control-label"></label>
+                <input asp-for="LocationId" class="form-control" />
+                <span asp-validation-for="LocationId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="District" class="control-label"></label>
+                <input asp-for="District" class="form-control" />
+                <span asp-validation-for="District" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ward" class="control-label"></label>
+                <input asp-for="Ward" class="form-control" />
+                <span asp-validation-for="Ward" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+*@
+
+
+@model Shoplinhkien.Models.Order
+
+
+<div class="modal-header">
+    <h5 class="modal-title">THÔNG TIN ĐƠN HÀNG</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">THÔNG TIN ĐƠN HÀNG #@Model.OrderId</h4>
+            <div class="table-responsive">
+                <table class="product-info-table m-t-20">
+                    <tbody>
+                        <tr>
+                            <td>ID:</td>
+                            <td class="text-dark font-weight-semibold">#@Model.OrderId</td>
+                        </tr>
+                        <tr>
+                            <td>Ngày mua hàng:</td>
+                            <td>@Model.OrderDate</td>
+                        </tr>
+                        <tr>
+                            <td>Khách hàng:</td>
+                            <td>@Model.Customer.FullName</td>
+                        </tr>
+                        <tr>
+                            <td>Số điện thoại:</td>
+                            <td>@Model.Customer.Phone</td>
+                        </tr>
+                        <tr>
+                            <td>Địa chỉ:</td>
+                            <td>@Model.Customer.Address</td>
+                        </tr>
+                        <tr>
+                            <td>Tổng tiền:</td>
+                            <td>@Model.Total.ToString("#,##0") VNĐ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <form asp-area="Admin" asp-controller="AdminOrders" asp-action="ChangeStatus" asp-route-id="@Model.OrderId" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="OrderId" />
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Chọn trạng thái đơn hàng</label>
+                            <select class="form-control" asp-for="TransactStatusId" asp-items="@ViewBag.TrangThai" required>
+                                <option value="0" disabled selected>Chọn trạng thái đơn hàng</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Đã thanh toán</label>
+                        <input asp-for="Paid" type="checkbox" />
+                        <span asp-validation-for="Paid" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Đơn hàng bị hủy</label>
+                        <input asp-for="Deleted" type="checkbox" />
+                        <span asp-validation-for="Deleted" class="text-danger"></span>
+                    </div>
+
+                </div>
+                <button type="submit" class="btn btn-success">Lưu thay đổi</button>
+            </form>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿@model Shoplinhkien.Models.Account
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h1>Delete</h1>
+        <h3>Are you sure you want to delete this?</h3>
+    </div>
+    <div class="card-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 "><strong>@Html.DisplayNameFor(model => model.Phone)</strong></div>
+                <div class="col-7">@Html.DisplayFor(model => model.Phone)</div>
+
+                <div class="col-3"><strong>@Html.DisplayNameFor(model => model.Email)</strong></div>
+                <div class="col-7">@Html.DisplayFor(model => model.Email)</div>
+
+                <div class="col-3"><strong>@Html.DisplayNameFor(model => model.Password)</strong></div>
+                <div class="col-7">@Html.DisplayFor(model => model.Password)</div>
+
+                <div class="col-3"><strong>@Html.DisplayNameFor(model => model.Salt)</strong></div>
+                <div class="col-7">@Html.DisplayFor(model => model.Salt)</div>
+
+                <div class="col-3"><strong>@Html.DisplayNameFor(model => model.Active)</strong></div>
+                <div class="col-7">@Html.RadioButtonFor(model => model.Active, true, new { disabled = "disabled"})</div>
+
+                <div class="col-3"><strong>@Html.DisplayNameFor(model => model.FullName)</strong></div>
+                <div class="col-7">@Html.DisplayFor(model => model.FullName)</div>
+
+                <div class="col-3"><strong>@Html.DisplayNameFor(model => model.LastLogin)</strong></div>
+                <div class="col-7">@Html.DisplayFor(model => model.LastLogin)</div>
+
+                <div class="col-3"><strong>@Html.DisplayNameFor(model => model.CreateDate)</strong></div>
+                <div class="col-7">@Html.DisplayFor(model => model.CreateDate)</div>
+
+                <div class="col-3"><strong>@Html.DisplayNameFor(model => model.Role)</strong></div>
+                <div class="col-7">@Html.DisplayFor(model => model.Role.RoleName)</div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="AccountId" />
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a asp-action="Index"><button type="button" class="btn btn-primary">Back to list</button></a>
+        </form>
+    </div>
+</div>

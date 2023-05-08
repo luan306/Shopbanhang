@@ -1,0 +1,107 @@
+﻿@model Shoplinhkien.Models.Customer
+
+@{
+    ViewData["Title"] = "Chi Tiết Khách Hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h4>Chi Tiết Khách Hàng</h4>
+    </div>
+    <div class="card-body">
+        <div>
+            <dl class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.FullName)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.FullName)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Birthday)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Birthday)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Avatar)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Avatar)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Address)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Address)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Phone)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Phone)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.LocationId)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.LocationId)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.District)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.District)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Ward)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Ward)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CreateDate)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CreateDate)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Password)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Password)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Salt)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Salt)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.LastLogin)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.LastLogin)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Active)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Active)
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="card-footer">
+        <a asp-action="Edit" asp-route-id="@Model?.CustomerId" class="btn btn-primary">Edit</a>
+        <a asp-action="Index" class="btn btn-primary">Back to List</a>
+    </div>
+</div>
+
